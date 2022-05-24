@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+  <table class="table" align="center">
+      <thead>
+                        <tr>
+                            <th>Название</th>
+                            <th>Местоположение</th>
+                            <th>Бассейновый округ</th>
+                            <th>Речной бассйен</th>
+                            <th>Площадь (км2)</th>
+                        </tr>
+      </thead>
+      <tbody>
+      {% for lake in listLake %}
+          <tr>
+                            <td>{{ lake.title }}</td>
+                            <td>{{ lake.location }}</td>
+                            <td>{{ lake.bassin_area }}</td>
+                            <td>{{ lake.river_bassin }}</td>
+                            <td>{{ lake.area }}</td>
+          </tr>
+      {% endfor %}
+      </tbody>
+                </table>
+
+    <div>
+        <a href="{% url 'home' %}">Домашняя</a>
+        <a href="{% url 'listLake' %}">Список озер</a>
+        <a href="/admin">Админка</a>
+    </div>
+</body>
+</html>
